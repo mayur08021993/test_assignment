@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,8 +22,8 @@ public class CsvApplicationController {
 	@Autowired
 	CSVDataService service;
 	
-	@PostMapping(value="/average/{columnNumber}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> averageByColumn(@PathVariable(value="columnNumber") String columnNumber,@RequestParam("file") MultipartFile file)  {
+	@PostMapping(value="/average",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Object> averageByColumn(@RequestParam("column") String columnNumber,@RequestParam("file") MultipartFile file)  {
 		
 		try {
 			CsvData data = service.getAvarage(file, columnNumber);
