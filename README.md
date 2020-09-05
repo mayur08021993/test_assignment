@@ -20,3 +20,6 @@ Couldn't complete below things due to time crunch:
 How to test API
 1) add csv file to be tested to form-data in postman
 2) use endpoint /csvData/average/{columnNumber}
+
+
+I have also included CSV file that I used for testing
