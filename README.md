@@ -17,7 +17,7 @@ Couldn't complete below things due to time crunch:
   Add test cases for Service class
   Add negative test cases
 
-How to test API
+How did I test API
 1) add csv file to be tested to form-data in postman
 2) use endpoint /csvData/average/{columnNumber}
 
