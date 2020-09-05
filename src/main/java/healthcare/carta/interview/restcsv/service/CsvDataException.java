@@ -1,9 +1,5 @@
 package healthcare.carta.interview.restcsv.service;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-@ResponseStatus(code=HttpStatus.INTERNAL_SERVER_ERROR)
 public class CsvDataException extends Exception {
 
 	private String errMsg;

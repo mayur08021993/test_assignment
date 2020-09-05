@@ -17,7 +17,7 @@ public class CSVDataService {
 	public CsvData getAvarage(MultipartFile multipartFile,String columnNumber) throws CsvDataException {
 		int records = 0;
 		double sum =0;
-		
+		CsvData csvData = new CsvData();
 		
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(multipartFile.getInputStream()))) {
 		    String line;
@@ -26,13 +26,13 @@ public class CSVDataService {
 		        sum+=Double.valueOf(values[Integer.valueOf(columnNumber)-1]) ;
 		        records++;
 		    }
+		    double average = sum/records;
+			
+			csvData.setData(average);
 		} catch (Exception e) {
 			throw new CsvDataException("Error in processing csv data");
 		}
-		double average = sum/records;
 		
-		CsvData csvData = new CsvData();
-		csvData.setData(average);
 		return csvData;
 	}
 }
