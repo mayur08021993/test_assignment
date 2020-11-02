@@ -4,7 +4,7 @@
 This is test assignment : To find average of column from CSV file
 
 
-Created REST API :
+Created REST API V1:
 
 Method : post
 Endpoint : /csvData/average/{columnNumber}
